@@ -638,7 +638,6 @@ header .hamburger_bar {
     width: 48rem;
     height: 54.75rem;
     flex-shrink: 0;
-    background-color: #071527;
     background-position-x: 50%;
     background-position-y: -60%;
     background-repeat: no-repeat;
