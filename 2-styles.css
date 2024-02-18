@@ -1,8 +1,8 @@
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0 auto}main{display:block}h1{font-size:2em;margin:0 auto}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0 auto}button,input{overflow:visible}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}template{display:none}[hidden]{display:none}
 
 *,
-*:before,
-*:after {
+*::before,
+*::after {
   font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
   box-sizing: border-box;
   margin: 0;
@@ -715,8 +715,8 @@ header .hamburger_bar {
 @media only screen and (max-width: 480px) {
 
   *, 
-  *:before, 
-  *:after {
+  *::before, 
+  *::after {
     margin: 0 auto;
     border: 0;
     padding: 0;
@@ -843,97 +843,176 @@ header .hamburger_bar {
     line-height: 1.625rem;
   }
 
-      /* Phone WTD
-    ============================= */
+    /* Phone WTD
+  ============================= */
 
-    .wtd {
-      max-width: 23.4375rem;
-      margin: 0 auto; 
-    }
-  
-    .wtd_main {
-      display: flex;
-      width: 20.3125rem;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 6rem;
-      margin-top: 6.88rem;
-      margin-left: 1.56rem;
-    }
-  
-    .wtd h1 {
-      color: #071629;
-      text-align: center;
-      font-size: 2rem;
-      font-style: normal;
-      font-weight: 600;
-      line-height: normal;
-    }
-  
-    .wtd_main p {
-      color: #071629;
-      text-align: center;
-      font-size: 1rem;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 1.625rem;
-    }
-  
-    .wtd_container {
-      display: flex;
-      justify-content: space-around;
-      flex-direction: row;
-      align-items: center;
-      flex-wrap: wrap;
-      width: 12.9375rem;
-      height: 63.75rem;
-      flex-shrink: 0;
-      gap: 6rem;
-      margin-top: 6.88rem;
-      margin-left: 5.25rem;
-      margin-bottom: 6.87rem;
-    }
-  
-    .wtd_box_1, .wtd_box_2, .wtd_box_3, .wtd_box_4 {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 12.9375rem;
-      height: 11.25rem;
-      flex-shrink: 0;
-      margin: 0;
-    }
-  
-    .wtd_box_2 {
-      width: 12.9375rem;
-      height: 12.0625rem;
-    }
-  
-    .wtd_box_3 {
-      height: 11.1875rem;
-    }
-  
-    .wtd h2 {
-      width: 12.9375rem;
-      color: #071629;
-      text-align: center;
-      font-size: 1.125rem;
-      font-style: normal;
-      font-weight: 600;
-      line-height: 1.625rem;
-      margin-bottom: 0.81rem;
-    }
-  
-    .wtd_container p {
-      width: 12.9375rem;
-      color: #071629;
-      text-align: center;
-      font-size: 0.875rem;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 1.625rem;
-    }
+  .wtd {
+    max-width: 23.4375rem;
+    margin: 0 auto; 
+  }
+
+  .wtd_main {
+    display: flex;
+    width: 20.3125rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6rem;
+    margin-top: 6.88rem;
+    margin-left: 1.56rem;
+  }
+
+  .wtd h1 {
+    color: #071629;
+    text-align: center;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  .wtd_main p {
+    color: #071629;
+    text-align: center;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.625rem;
+  }
+
+  .wtd_container {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 12.9375rem;
+    height: 63.75rem;
+    flex-shrink: 0;
+    gap: 6rem;
+    margin-top: 6.88rem;
+    margin-left: 5.25rem;
+    margin-bottom: 6.87rem;
+  }
+
+  .wtd_box_1, .wtd_box_2, .wtd_box_3, .wtd_box_4 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 12.9375rem;
+    height: 11.25rem;
+    flex-shrink: 0;
+    margin: 0;
+  }
+
+  .wtd_box_2 {
+    width: 12.9375rem;
+    height: 12.0625rem;
+  }
+
+  .wtd_box_3 {
+    height: 11.1875rem;
+  }
+
+  .wtd h2 {
+    width: 12.9375rem;
+    color: #071629;
+    text-align: center;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.625rem;
+    margin-bottom: 0.81rem;
+  }
+
+  .wtd_container p {
+    width: 12.9375rem;
+    color: #071629;
+    text-align: center;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.625rem;
+  }
+
+  /* Phone Result
+  ============================= */
+
+  .result {
+    position: relative;
+    background-image: url("images/headphones_hero_2.jpg");
+    width: 23.4375rem;
+    height: 93.1875rem;
+    flex-shrink: 0;
+    background-position-x: 50%;
+    background-position-y: 0%;
+    background-repeat: no-repeat;
+    /* margin: 0 auto; */
+  }
+
+  .result h1{
+    color: #FFF;
+    text-align: center;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    padding-top: 7.81rem;
+    margin-bottom: 2.87rem;
+  }
+
+  .result h2 {
+    width: 19.0625rem;
+    color: #FFF;
+    text-align: center;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.625rem;
+    margin-left: 2.25rem;
+    margin-bottom: 4.81rem;
+  }
+
+  .pentagone_box {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 11.875rem;
+    margin-left: 5.81rem;
+  }
+
+  .pentagone {
+    width: 11.875rem;
+    height: 11.875rem;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2.62rem;
+  }
+
+  .pentagone h3 {
+    z-index: 1;
+    color: #FFF;
+    text-align: center;
+    font-size: 2.875rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.625rem;
+    margin-top: -6.5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .pentagone p {
+    z-index: 1;
+    color: #FFF;
+    text-align: center;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.625rem;
+  }
 }
 
 body::-webkit-scrollbar {
