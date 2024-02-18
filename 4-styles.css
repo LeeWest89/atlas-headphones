@@ -847,6 +847,22 @@ footer p {
     margin-bottom: 8.12rem;
     margin-left: 13.63rem;
   }
+
+/* Footer WTD
+  ============================= */
+
+  footer {
+    width: 48rem;
+    height: 15.5625rem;
+  }
+  
+  footer p {
+    margin-top: 4rem;
+  }
+  
+  .ls_bar {
+    width: 41.75rem;
+    margin-top: 6.81rem;
 }
 
 /*Phone
@@ -1170,6 +1186,29 @@ footer p {
 
   form {
     margin: 0;
+  }
+
+  /* Phone Footer
+============================= */
+
+  footer {
+    width: 23.4375rem;
+    height: 15.5625rem;
+  }
+
+  footer p {
+    margin-top: 2.81rem;
+  }
+
+  .ls_bar {
+    flex-direction: column;
+    width: 10rem;
+    margin-top: 3rem;
+
+  }
+
+  .footer_logo {
+    margin-bottom: 2.81rem;
   }
 }
 
