@@ -848,7 +848,7 @@ footer p {
     margin-left: 13.63rem;
   }
 
-/* Footer WTD
+/* Tablet Footer
   ============================= */
 
   footer {
@@ -863,7 +863,9 @@ footer p {
   .ls_bar {
     width: 41.75rem;
     margin-top: 6.81rem;
+  }
 }
+
 
 /*Phone
   ============================= */
