@@ -369,172 +369,172 @@ header #menu a:hover {
 }
 
 /*Phone
-  ============================= */
+============================= */
 
-  @media only screen and (max-width: 480px) {
+@media only screen and (max-width: 480px) {
 
-    *, *::before, *::after {
-      font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      border: 0;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-    }
-  
-    .header_hero {
-      width: 23.4375rem;
-    }
-  
-    .background_image {
-      background-position: 35% center;
-      height: 54.3125rem;
-    }
-
-/*Phone Header
-  ============================= */
-
-  header {
-    padding: 0;
-  }
-
-  .header_bar #menu {
-    width: 0;
-  }
-
-  .header_bar {
-    visibility: collapse;
-    width: 0;
-  }
-
-  .hamburger, .hamburger_bar {
-    visibility: visible;
-  }
-
-  .hamburger_bar {
-    display: flex;
-    flex-direction: column;
-    gap: var(--hamburger-gap);
-    width: max-content;
-    position: absolute;
-    top: 2.5rem;
-    left: 1.31rem;
-    z-index: 2;
-    cursor: pointer;
-  }
-
-  .hamburger_bar input {
-    appearance: none;
-    padding: 0;
+  *, *::before, *::after {
+    font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
     margin: 0;
-    outline: none;
-    pointer-events: none;
-  }
-
-  .hamburger_bar:has(input:checked)::before {
-    rotate: 45deg;
-    width: var(--x-width);
-    translate: 0 calc(var(--bar-height) / -2);
-  }
-
-  .hamburger_bar:has(input:checked)::after {
-    rotate: -45deg;
-    width: var(--x-width);
-    translate: 0 calc(var(--bar-height) / 2);
-  }
-
-  .hamburger_bar input:checked {
-    opacity: 0;
-    width: 0;
-  }
-
-  .hamburger_bar::before,
-  .hamburger_bar::after,
-  .hamburger_bar input {
-    content: "";
-    width: var(--bar-width);
-    height: var(--bar-height);
-    background-color: #FFF;
-    border-radius: 1.375rem;
-    transition: opacity var(--timing), width var(--timing), rotate var(--timing), translate var(--timing);
-    transform-origin: left center;
-  }
-
-  .center_bar {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 1.81rem;
-    margin-left: 6.69rem;
-    gap: 1.81rem;
-  }
-
-  nav {
-    flex-direction: column;
-    align-items: center;
-    margin-top: 2.81rem;
-  }
-
-  .sidebar {
-    transition: translate var(--timing);
-    translate: -375%;
-  }
-
-  .hamburger_bar:has(input:checked) ~ .center_bar .sidebar {
-    translate: 0;
-  }
-
-  /*Phone Hero
-  ============================= */
-
-  .hero_piece {
-    position: relative;
-    width: 22.3125rem;
-    margin-top: 10.44rem;
-    margin-left: 0.56rem;
-    margin-right: 0.56rem;
+    padding: 0;
+    border: 0;
     top: 0;
     left: 0;
+    right: 0;
+    bottom: 0;
   }
 
-  .hero_piece h1 {
-    padding: 0;
+  .header_hero {
+    width: 23.4375rem;
   }
 
-  .hero_piece h2 {
-    width: 17.4375rem;
-    padding: 0;
+  .background_image {
+    background-position: 35% center;
+    height: 54.3125rem;
   }
 
-  .hero_button {
-    width: 10.125rem;
-    margin-top: 1.25rem;
-    margin-left: 6.06rem;
+/*Phone Header
+============================= */
+
+header {
+  padding: 0;
+}
+
+.header_bar #menu {
+  width: 0;
+}
+
+.header_bar {
+  visibility: collapse;
+  width: 0;
+}
+
+.hamburger, .hamburger_bar {
+  visibility: visible;
+}
+
+.hamburger_bar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--hamburger-gap);
+  width: max-content;
+  position: absolute;
+  top: 2.5rem;
+  left: 1.31rem;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.hamburger_bar input {
+  appearance: none;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  pointer-events: none;
+}
+
+.hamburger_bar:has(input:checked)::before {
+  rotate: 45deg;
+  width: var(--x-width);
+  translate: 0 calc(var(--bar-height) / -2);
+}
+
+.hamburger_bar:has(input:checked)::after {
+  rotate: -45deg;
+  width: var(--x-width);
+  translate: 0 calc(var(--bar-height) / 2);
+}
+
+.hamburger_bar input:checked {
+  opacity: 0;
+  width: 0;
+}
+
+.hamburger_bar::before,
+.hamburger_bar::after,
+.hamburger_bar input {
+  content: "";
+  width: var(--bar-width);
+  height: var(--bar-height);
+  background-color: #FFF;
+  border-radius: 1.375rem;
+  transition: opacity var(--timing), width var(--timing), rotate var(--timing), translate var(--timing);
+  transform-origin: left center;
+}
+
+.center_bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1.81rem;
+  margin-left: 6.69rem;
+  gap: 1.81rem;
+}
+
+nav {
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2.81rem;
+}
+
+.sidebar {
+  transition: translate var(--timing);
+  translate: -375%;
+}
+
+.hamburger_bar:has(input:checked) ~ .center_bar .sidebar {
+  translate: 0;
+}
+
+/*Phone Hero
+============================= */
+
+.hero_piece {
+  position: relative;
+  width: 22.3125rem;
+  margin-top: 10.44rem;
+  margin-left: 0.56rem;
+  margin-right: 0.56rem;
+  top: 0;
+  left: 0;
+}
+
+.hero_piece h1 {
+  padding: 0;
+}
+
+.hero_piece h2 {
+  width: 17.4375rem;
+  padding: 0;
+}
+
+.hero_button {
+  width: 10.125rem;
+  margin-top: 1.25rem;
+  margin-left: 6.06rem;
+}
+
+.hero_piece p {
+  width: 20.9375rem;
+}
+
+
+    /* Phone WTD
+  ============================= */
+
+  .wtd_main {
+    width: 20.3125rem;
+    gap: 2.5rem;
+    margin-left: 1.56rem;
   }
 
-  .hero_piece p {
-    width: 20.9375rem;
+  .wtd_container {
+    width: 12.9375rem;
+    height: 63.75rem;
+    gap: 6rem;
+    margin-left: 5.25rem;
   }
-
-
-      /* Phone WTD
-    ============================= */
-
-    .wtd_main {
-      width: 20.3125rem;
-      gap: 2.5rem;
-      margin-left: 1.56rem;
-    }
-  
-    .wtd_container {
-      width: 12.9375rem;
-      height: 63.75rem;
-      gap: 6rem;
-      margin-left: 5.25rem;
-    }
 }
 
 body::-webkit-scrollbar {
