@@ -1,8 +1,8 @@
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0 auto}main{display:block}h1{font-size:2em;margin:0 auto}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0 auto}button,input{overflow:visible}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}template{display:none}[hidden]{display:none}
 
 *,
-*:before,
-*:after {
+*::before,
+*::after {
   font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
   box-sizing: border-box;
   margin: 0;
@@ -18,6 +18,14 @@
 ============================= */
 
 :root {
+  --bar-width: 1.25rem;
+  --bar-height: 0.125rem;
+  --hamburger-gap: 0.25rem;
+  --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
+  --timing: .3s ease-in-out;
+  --x-width: calc(var(--hamburger-height) * 1.41421356237);
+
+  --background-color: #071629;
   --color-orange: #FF6565;
 }
 
@@ -44,13 +52,13 @@
 
 header {
   display: flex;
-  flex-wrap: wrap;
-  position: relative;
+  /* flex-wrap: wrap;
+  position: relative; */
   top: 0;
   left: 0;
   width: 100%;
   padding-top: 1.74rem;
-  padding-left: 12.54rem;
+  margin-left: 12.54rem;
   flex-shrink: 0;
 }
 
@@ -90,8 +98,8 @@ header #menu a:hover {
   color: var(--color-orange);
 }
 
-header .hamburger_bar {
-  visibility: collapse;
+.hamburger {
+  visibility: hidden;
 }
 
 /* Hero_piece
@@ -166,17 +174,6 @@ header .hamburger_bar {
 
 @media (max-width: 768px) {
 
-  *, 
-  *:before, 
-  *:after {
-    border: 0;
-    padding: 0;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-  }
-
   .header_hero {
     max-width: 87.5rem;
     margin: 0 auto; 
@@ -209,6 +206,7 @@ header .hamburger_bar {
     padding-top: 1.81rem;
     padding-left: 4.13rem;
     flex-shrink: 0;
+    margin: 0;
   }
   
   .header_bar {
@@ -244,11 +242,7 @@ header .hamburger_bar {
     line-height: normal;
   }
   
-  header #menu a:hover {
-    color: var(--color-orange);
-  }
-  
-  header .hamburger_bar {
+  .hamburger_bar {
     visibility: collapse;
   }
   
@@ -328,17 +322,19 @@ header .hamburger_bar {
 
 @media only screen and (max-width: 480px) {
 
-  *, 
-  *:before, 
-  *:after {
-    margin: 0 auto;
-    border: 0;
-    padding: 0;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-  }
+  *,
+*::before,
+*::after {
+  font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
 
   .header_hero {
     width: 23.4375rem;
@@ -357,41 +353,99 @@ header .hamburger_bar {
 
   /* Mobile Header */
 
-  header .header_bar {
-    visibility: collapse;
+  header {
+    margin: 0;
+    padding: 0;
   }
 
-  header .hamburger_bar {
+  .header_bar #menu {
+    width: 0;
+  }
+
+  .header_bar {
+    visibility: collapse;
+    width: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  .hamburger, .hamburger_bar {
     visibility: visible;
+  }
+
+  .hamburger_bar {
     display: flex;
-    width: 15.4375rem;
-    height: 2rem;
-    margin-bottom: 16.62rem;
-  }
-
-  .hamburger_bar img {
+    flex-direction: column;
+    gap: var(--hamburger-gap);
+    width: max-content;
     position: absolute;
+    top: 2.5rem;
+    left: 1.31rem;
+    z-index: 2;
+    cursor: pointer;
   }
 
-  .hamburger_bar .hamburger img {
-    margin-top: 29px;
-    margin-left: 21px;
+  .hamburger_bar input {
+    appearance: none;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    pointer-events: none;
   }
 
-  .x_button img {
-    margin-top: 34px;
-    margin-left: 21px;
-    visibility: collapse;
+  .hamburger_bar:has(input:checked)::before {
+    rotate: 45deg;
+    width: var(--x-width);
+    translate: 0 calc(var(--bar-height) / -2);
   }
 
-  .hamburger_bar .logo img {
-    margin-top: 29px;
-    margin-left: 106px;
+  .hamburger_bar:has(input:checked)::after {
+    rotate: -45deg;
+    width: var(--x-width);
+    translate: 0 calc(var(--bar-height) / 2);
   }
 
-  header .hamburger_bar #menu {
-    visibility: collapse;
+  .hamburger_bar input:checked {
+    opacity: 0;
+    width: 0;
   }
+
+  .hamburger_bar::before,
+  .hamburger_bar::after,
+  .hamburger_bar input {
+    content: "";
+    width: var(--bar-width);
+    height: var(--bar-height);
+    background-color: #FFF;
+    border-radius: 1.375rem;
+    transition: opacity var(--timing), width var(--timing), rotate var(--timing), translate var(--timing);
+    transform-origin: left center;
+  }
+
+  .center_bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1.81rem;
+    margin-left: 6.69rem;
+    gap: 1.81rem;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2.81rem;
+  }
+
+  .sidebar {
+    transition: translate var(--timing);
+    translate: -375%;
+  }
+
+  .hamburger_bar:has(input:checked) ~ .center_bar .sidebar {
+    translate: 0;
+  }
+
 
   /* Mobile Hero */
 
@@ -403,6 +457,9 @@ header .hamburger_bar {
     width: 22.3125rem;
     height: 27.25rem;
     flex-shrink: 0;
+    margin-top: 10.44rem;
+    margin-left: 0.56rem;
+    margin-right: 0.56rem;
     top: 0;
     left: 0;
   }
@@ -415,6 +472,7 @@ header .hamburger_bar {
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+    padding: 0;
   }
 
   .hero_piece h2 {
@@ -425,6 +483,7 @@ header .hamburger_bar {
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+    padding: 0;
   }
 
   .hero_button {
@@ -437,6 +496,7 @@ header .hamburger_bar {
     color: #FFF;
     margin-top: 1.25rem;
     margin-bottom: 4.06rem;
+    margin-left: 6.06rem;
   }
 
   .hero_button:hover {
