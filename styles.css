@@ -160,7 +160,6 @@ header #menu a:hover {
 .hero_piece p {
   color: #FFF;
   text-align: center;
-  font-family: "Source Sans Pro";
   font-size: 1rem;
   font-style: normal;
   font-weight: 400;
@@ -517,24 +516,21 @@ footer p {
     flex-shrink: 0;
   }
   
-  .hamburger_bar {
-    visibility: collapse;
-  }
-  
   /* Tablet Hero_piece
   ============================= */
   
   .hero_piece {
-    left: 4.13rem;
+    margin-left: 5%;
+    margin-right: 5%;
   }
   
-  .hero_piece h1 {
+  /* .hero_piece h1 {
     padding-left: 1.81rem;
-  }
+  } */
   
-  .hero_piece h2 {
+  /* .hero_piece h2 {
     padding-left: 1.5rem;
-  }
+  } */
 
 
     /* Tablet WTD
@@ -752,13 +748,6 @@ nav {
 
     /* Phone WTD
   ============================= */
-
-  .wtd_main {
-    max-width: 20.3125rem;
-    gap: 2.5rem;
-    margin-left: auto;
-    margin-left: auto;
-  }
 
   .wtd_container {
     max-width: 12.9375rem;
