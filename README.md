@@ -10,7 +10,7 @@ The goal is to recreate a version of this:
 
 ![Complete web page](images/examples_of_what_to_do.jpg)
 
-### Interactions note:
+#### Interactions note:
 
 + the web page must switch to the mobile version when the screen width is 480px or less
 
