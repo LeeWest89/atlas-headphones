@@ -45,7 +45,7 @@ body {
   background-image: url("images/headphones_hero_1.jpg");
   height: 50rem;
   background-size: cover;
-  background-position: 13.5%;
+  background-position: center;
   background-repeat: no-repeat;
   background-color: var(--background);
 }
